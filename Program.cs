@@ -91,23 +91,36 @@ namespace MyApp // Note: actual namespace depends on the project name.
         public void PrintClients(List<Client> clients)
         {
 
-            for (int index = 0; index < clients.Count; index++)
-            {
 
-                Console.WriteLine($"Nome: {clients[index].Nome} | Idade: {clients[index].Idade} | Altura: {clients[index].Altura}");
-
+            foreach(var item in clients)
+            {                
+                Console.WriteLine($"Nome: {item.Nome} | Idade: {item.Idade} | Altura: {item.Altura}");
             }
+
+            // for (int index = 0; index < clients.Count; index++)
+            // {
+
+            //     Console.WriteLine($"Nome: {clients[index].Nome} | Idade: {clients[index].Idade} | Altura: {clients[index].Altura}");
+
+            // }
         }
 
-        public void PrintClientsDoJeitoDoBucks(List<String> nomes, List<int> idades, List<int> alturas)
+        public void PrintClientsDoJeitoDoBucks(List<String> nomes, List<int> idades, List<int> alturas )
         {
-
-            for (int index = 0; index < nomes.Count; index++)
-            {
-
-                Console.WriteLine($"Nome: {nomes[index]} | Idade: {idades[index]} | Altura: {alturas[index]}");
-
+            int index = 0;
+             foreach(var nome in nomes)
+            {                
+                Console.WriteLine($"Nome: {nome} | Idade: {idades[index]} | Altura: {alturas[index]}");
+                index++;
             }
+        
+
+            // for (int index = 0; index < nomes.Count; index++)
+            // {
+
+            //     Console.WriteLine($"Nome: {nomes[index]} | Idade: {idades[index]} | Altura: {alturas[index]}");
+
+            // }
         }
 
 
@@ -129,19 +142,21 @@ namespace MyApp // Note: actual namespace depends on the project name.
             var client2 = new Client("Camilo", 32, 234);
 
             client2.SaveFile();
-            clients.Add(client1);
-            clients.Add(client2);
-            clients.Add(new Client("Outro nome3", 32, 234));
-            clients.Add(new Client("Outro nome4", 32, 234));
-            clients.Add(new Client("Outro nome6", 32, 234));
-            clients.Add(new Client("Outro nome7", 32, 234));
-            clients.Add(new Client("Outro nome9", 32, 234));
+            // clients.Add(client1);
+            // clients.Add(client2);
+            // clients.Add(new Client("Outro nome3", 32, 234));
+            // clients.Add(new Client("Outro nome4", 32, 234));
+            // clients.Add(new Client("Outro nome6", 32, 234));
+            // clients.Add(new Client("Outro nome7", 32, 234));
+            // clients.Add(new Client("Outro nome9", 32, 234));
 
 
             var printer = new ClientPrint();
 
+            string path = @"C:\temp\bancodedados.txt";
+            var text = File.ReadAllText(path);
 
-
+            Console.Write(text);
 
 
 
