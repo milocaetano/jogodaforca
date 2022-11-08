@@ -56,6 +56,21 @@ namespace jogodaforca.libs.Utils
         {
             var parser = new ClientParser();
             List<Client> clients = parser.GetClientsFromFile(this.path);
+
+            if(this.args.Length == 2){
+
+                string searchNameClient = this.args[1].ToUpper();              
+
+                foreach(var client in clients){
+
+                    if( client.Nome.ToUpper().Contains(searchNameClient) ){
+                        client.Imprime();
+                    }
+                }
+
+                return;
+            }
+
             var printer = new ClientPrinter();
             printer.PrintClients(clients);
         }
