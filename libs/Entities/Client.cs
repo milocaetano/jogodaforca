@@ -9,7 +9,7 @@ namespace jogodaforca.libs.Entities
         {
             this.Altura = altura;
             this.Idade = idade;
-            this.Nome = nome;
+            this.Nome = nome.Trim();
         }
 
         public void Imprime()

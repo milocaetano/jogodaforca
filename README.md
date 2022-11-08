@@ -58,3 +58,45 @@ Código de exemplo antigo
             //             Console.WriteLine(result);                
             //         }
             //    }
+
+
+SCRIPT DO BANCO
+
+USE [JOGODAFORCA]
+GO
+
+/****** Object:  Table [dbo].[Client]    Script Date: 07/11/2022 23:36:33 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Client](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nome] [nchar](100) NOT NULL,
+	[Idade] [int] NOT NULL,
+	[Altura] [int] NOT NULL
+) ON [PRIMARY]
+GO
+
+INSERT INTO [dbo].[Client]
+           ([Nome]
+           ,[Idade]
+           ,[Altura])
+     VALUES
+           ('Murilo'
+           ,34
+           ,184)
+GO
+
+
+INSERT INTO [dbo].[Client]
+           ([Nome]
+           ,[Idade]
+           ,[Altura])
+     VALUES
+           ('CAmilo Caetano'
+           ,34
+           ,174)
+
